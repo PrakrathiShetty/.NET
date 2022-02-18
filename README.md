@@ -315,55 +315,33 @@ namespace Exercises<br>
 <br>
 ![image](https://user-images.githubusercontent.com/99945753/154634993-377b17ab-8b81-4de3-930a-af979086c288.png)using System;<br>
 
-namespace Exercises
-{
-    class FrequencyIS
-    {
-        static void Main(string[] args)
-        {
-            int count = 0;
-            string inputString;
-            Console.WriteLine("\n......Frequency of word 'IS'......");
-            Console.Write("\n enter the input string:");
-            inputString = Console.ReadLine();
-            char[] separator = { ',', ' ', '.', '!', '\n' };
-            string testString = inputString.ToLower();
-            string[] outcomes = testString.Split(separator);
-            foreach (String s in outcomes)
-            {
-                Console.WriteLine(s);
-                if (s == "is")
-                    count++;
-            }
-            Console.WriteLine("\n Number of 'is' in" + inputString + "is:" + count);
-        }
-    }
-}
+using System;<br>
+namespace Exercises<br>
+{<br>
+    class FrequencyIS<br>
+    {<br>
+        static void Main(string[] args)<br>
+        {<br>
+            int count = 0;<br>
+            string inputString;<br>
+            Console.WriteLine("\n......Frequency of word 'IS'......");<br>
+            Console.Write("\n enter the input string:");<br>
+            inputString = Console.ReadLine();<br>
+            char[] separator = { ',', ' ', '.', '!', '\n' };<br>
+            string testString = inputString.ToLower();<br>
+            string[] outcomes = testString.Split(separator);<br>
+            foreach (String s in outcomes)<br>
+            {<br>
+                Console.WriteLine(s);<br>
+                if (s == "is")<br>
+                    count++;<br>
+            }<br>
+            Console.WriteLine("\n Number of 'is' in" + inputString + "is:" + count);<br>
+        }<br>
+    }<br>
+}<br>
+<br>
+<br>
+![image](https://user-images.githubusercontent.com/99945753/154635780-76175e65-e6e1-4684-8341-f9d1e4ddb707.png)<br>
 
 
-using System;
-
-namespace Exercises
-{
-    class FrequencyIS
-    {
-        static void Main(string[] args)
-        {
-            int count = 0;
-            string inputString;
-            Console.WriteLine("\n......Frequency of word 'IS'......");
-            Console.Write("\n enter the input string:");
-            inputString = Console.ReadLine();
-            char[] separator = { ',', ' ', '.', '!', '\n' };
-            string testString = inputString.ToLower();
-            string[] outcomes = testString.Split(separator);
-            foreach (String s in outcomes)
-            {
-                Console.WriteLine(s);
-                if (s == "is")
-                    count++;
-            }
-            Console.WriteLine("\n Number of 'is' in" + inputString + "is:" + count);
-        }
-    }
-}
