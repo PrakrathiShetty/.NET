@@ -247,42 +247,42 @@ namespace Exercises<br>
 
 
 using System;<br>
-
-namespace Exercises
-{
-    class Delegates
-    {
-        delegate string UppercaseDelegate(string input);
-        static string UppercaseFirst(string input)
-        {
-            char[] buffer = input.ToCharArray();
-            buffer[0] = char.ToUpper(buffer[0]);
-            return new string(buffer);
-        }
-        static string UppercaseLast(string input)
-        {
-            char[] buffer = input.ToCharArray();
-            buffer[buffer.Length - 1] = char.ToUpper(buffer[buffer.Length - 1]);
-            return new string(buffer);
-        }
-        static string UppercaseAll(string input)
-        {
-            return input.ToUpper();
-        }
-        static void writeOutput(string input,UppercaseDelegate del)
-        {
-            Console.WriteLine("Input string:{0}", input);
-            Console.WriteLine("Output string:{0}", del(input));
-        }
-        static void Main()
-        {
-            writeOutput("tom", new UppercaseDelegate(UppercaseFirst));
-            writeOutput("tom", new UppercaseDelegate(UppercaseLast));
-            writeOutput("tom", new UppercaseDelegate(UppercaseAll));
-            Console.ReadLine();
-        }
-
-
-    }
-}
+namespace Exercises<br>
+{<br>
+    class Delegates<br>
+    {<br>
+        delegate string UppercaseDelegate(string input);<br>
+        static string UppercaseFirst(string input)<br>
+        {<br>
+            char[] buffer = input.ToCharArray();<br>
+            buffer[0] = char.ToUpper(buffer[0]);<br>
+            return new string(buffer);<br>
+        }<br>
+        static string UppercaseLast(string input)<br>
+        {<br>
+            char[] buffer = input.ToCharArray();<br>
+            buffer[buffer.Length - 1] = char.ToUpper(buffer[buffer.Length - 1]);<br>
+            return new string(buffer);<br>
+        }<br>
+        static string UppercaseAll(string input)<br>
+        {<br>
+            return input.ToUpper();<br>
+        }<br>
+        static void writeOutput(string input,UppercaseDelegate del)<br>
+        {<br>
+            Console.WriteLine("Input string:{0}", input);<br>
+            Console.WriteLine("Output string:{0}", del(input));<br>
+        }<br>
+        static void Main()<br>
+        {<br>
+            writeOutput("tom", new UppercaseDelegate(UppercaseFirst));<br>
+            writeOutput("tom", new UppercaseDelegate(UppercaseLast));<br>
+            writeOutput("tom", new UppercaseDelegate(UppercaseAll));<br>
+            Console.ReadLine();<br>
+        }<br>
+        }<br>
+}<br>
+<br>
+<br>
+![image](https://user-images.githubusercontent.com/99945753/154634023-e611548c-cbd0-4efc-8053-141927b4729b.png)<br>
 
