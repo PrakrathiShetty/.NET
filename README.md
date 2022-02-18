@@ -135,8 +135,7 @@ namespace Exercises<br>
                 }<br>
                 }<br>
             Calculate();<br>
-
-        }<br>
+            }<br>
         private void Calculate()<br>
         {<br>
             average = total / 5;<br>
@@ -150,8 +149,7 @@ namespace Exercises<br>
                 grade = "second class";<br>
             else<br>
                 grade = "pass class";<br>
-
-        }<br>
+                }<br>
         public override void Display()<br>
         {<br>
             base.Display();<br>
