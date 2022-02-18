@@ -246,4 +246,43 @@ namespace Exercises<br>
 ![image](https://user-images.githubusercontent.com/99945753/154633170-b6aef2a3-820e-4404-a38f-8ed56357f273.png)<br>
 
 
+using System;<br>
+
+namespace Exercises
+{
+    class Delegates
+    {
+        delegate string UppercaseDelegate(string input);
+        static string UppercaseFirst(string input)
+        {
+            char[] buffer = input.ToCharArray();
+            buffer[0] = char.ToUpper(buffer[0]);
+            return new string(buffer);
+        }
+        static string UppercaseLast(string input)
+        {
+            char[] buffer = input.ToCharArray();
+            buffer[buffer.Length - 1] = char.ToUpper(buffer[buffer.Length - 1]);
+            return new string(buffer);
+        }
+        static string UppercaseAll(string input)
+        {
+            return input.ToUpper();
+        }
+        static void writeOutput(string input,UppercaseDelegate del)
+        {
+            Console.WriteLine("Input string:{0}", input);
+            Console.WriteLine("Output string:{0}", del(input));
+        }
+        static void Main()
+        {
+            writeOutput("tom", new UppercaseDelegate(UppercaseFirst));
+            writeOutput("tom", new UppercaseDelegate(UppercaseLast));
+            writeOutput("tom", new UppercaseDelegate(UppercaseAll));
+            Console.ReadLine();
+        }
+
+
+    }
+}
 
