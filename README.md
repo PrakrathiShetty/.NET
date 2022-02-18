@@ -133,8 +133,7 @@ namespace Exercises<br>
                 {<br>
                     flagFail = 1;<br>
                 }<br>
-
-            }<br>
+                }<br>
             Calculate();<br>
 
         }<br>
