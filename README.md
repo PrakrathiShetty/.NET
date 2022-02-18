@@ -313,5 +313,57 @@ namespace Exercises<br>
 }<br>
 <br>
 <br>
-![image](https://user-images.githubusercontent.com/99945753/154634993-377b17ab-8b81-4de3-930a-af979086c288.png)<br>
+![image](https://user-images.githubusercontent.com/99945753/154634993-377b17ab-8b81-4de3-930a-af979086c288.png)using System;<br>
 
+namespace Exercises
+{
+    class FrequencyIS
+    {
+        static void Main(string[] args)
+        {
+            int count = 0;
+            string inputString;
+            Console.WriteLine("\n......Frequency of word 'IS'......");
+            Console.Write("\n enter the input string:");
+            inputString = Console.ReadLine();
+            char[] separator = { ',', ' ', '.', '!', '\n' };
+            string testString = inputString.ToLower();
+            string[] outcomes = testString.Split(separator);
+            foreach (String s in outcomes)
+            {
+                Console.WriteLine(s);
+                if (s == "is")
+                    count++;
+            }
+            Console.WriteLine("\n Number of 'is' in" + inputString + "is:" + count);
+        }
+    }
+}
+
+
+using System;
+
+namespace Exercises
+{
+    class FrequencyIS
+    {
+        static void Main(string[] args)
+        {
+            int count = 0;
+            string inputString;
+            Console.WriteLine("\n......Frequency of word 'IS'......");
+            Console.Write("\n enter the input string:");
+            inputString = Console.ReadLine();
+            char[] separator = { ',', ' ', '.', '!', '\n' };
+            string testString = inputString.ToLower();
+            string[] outcomes = testString.Split(separator);
+            foreach (String s in outcomes)
+            {
+                Console.WriteLine(s);
+                if (s == "is")
+                    count++;
+            }
+            Console.WriteLine("\n Number of 'is' in" + inputString + "is:" + count);
+        }
+    }
+}
