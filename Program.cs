@@ -1,36 +1,17 @@
 ﻿using System;
-using System.Threading;
-
-namespace Exercises
+public class Reverse
 {
-    class ThreadPoolProg
+    public static void Main(string[] args)
     {
-       public  void ThreadFun1(Object obj)
+        int n, reverse = 0, rem;
+        Console.Write("Enter a number: ");
+        n = int.Parse(Console.ReadLine());
+        while (n != 0)
         {
-            int loop = 0;
-            for(loop=0;loop<=4;loop++)
-            {
-                Console.WriteLine("Thead1 isexecting");
-            }
+            rem = n % 10;
+            reverse = reverse * 10 + rem;
+            n /= 10;
         }
-        public void ThreadFun2(Object obj)
-        {
-            int loop= 0;
-            for (loop = 0; loop <= 4; loop++)
-            {
-                Console.WriteLine("Thead2 is execting");
-            }
-
-        }
-        public static void Main()
-        {
-            ThreadPoolProg TP = new ThreadPoolProg();
-            for(int i=0;i<2;i++)
-            {
-                ThreadPool.QueueUserWorkItem(new WaitCallback(TP.ThreadFun1));
-                ThreadPool.QueueUserWorkItem(new WaitCallback(TP.ThreadFun2));
-            }
-            Console.ReadKey();
-        }
+        Console.Write("Reversed Number: " + reverse);
     }
-}
+} 
