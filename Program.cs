@@ -1,80 +1,46 @@
 ﻿using System;
-using System.IO;
 
 namespace Exercises
 {
-    class FileRead
+    class ExceptionHandling
     {
-       public static void Main()
+        static void Main(string[] args)
         {
-            string fileName;
-            while(true)
+            Age a = new Age();
+            try
             {
-                Console.WriteLine("\n ......MENU....");
-                Console.WriteLine("\n1.create a file");
-                Console.WriteLine("\n2.existance of the file");
-                Console.WriteLine("\n3.read the conents of the file");
-                Console.WriteLine("\n4.exit");
-                Console.WriteLine("\n enter your choice");
-                int ch = int.Parse(Console.ReadLine());
-                switch(ch)
-                {
-                    case 1:
-                        Console.Write("\n enter the file name to create\n");
-                        fileName = Console.ReadLine();
-                        Console.WriteLine("\n write the contents to the file:\n");
-                        string r = Console.ReadLine();
-                        using (StreamWriter fileStr = File.CreateText(fileName))
-                        {
-                            fileStr.WriteLine(r);
-                        }
-                        Console.WriteLine("\n file created");
-                        break;
-                    case 2:
-                        Console.Write("\n enter the file:");
-                        fileName = Console.ReadLine();
-                        if(File.Exists(fileName))
-                        {
-                            Console.WriteLine("file exists...");
-                        }
-                        else
-                        {
-                            Console.WriteLine("File does not exists in the current directory");
-                        }
-                        break;
-                    case 3:
-                        Console.Write("enter the file name to read the contents:\n");
-                        fileName = Console.ReadLine();
-                        if (File.Exists(fileName))
-                        {
-                            using (StreamReader sr = File.OpenText(fileName))
-                            {
-                                string s = " ";
-                                Console.WriteLine("here is the content of the file:");
-                                while ((s = sr.ReadLine()) != null)
-                                {
-                                    Console.WriteLine(s);
-                                }
-                                Console.WriteLine("");
-
-                            }
-                        }
-                        else
-                        {
-                            Console.WriteLine("File does not exists");
-                        }
-                        break;
-                    case 4:
-                        Console.WriteLine("\nExiting....");
-                        return;
-                    default:
-                        Console.WriteLine("\n Invalid choice");
-                        break;
-
-
-
-                }
+                a.displayAge();
             }
+            catch (AgeIsNegativeException e)
+            {
+                Console.WriteLine("AgeIsNegativeException :{0}", e.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Excecution of finally block is done");
+            }
+        }
+    }
+}
+public class AgeIsNegativeException : Exception
+{
+    public AgeIsNegativeException(string message):base(message)
+    {
+
+    }
+}
+public class Age
+{
+    int age = -5;
+    public void displayAge()
+    {
+        if(age<0)
+        {
+            throw (new AgeIsNegativeException("Age cannot be negative"));
+        }
+        else
+        {
+            Console.WriteLine("Age is:{0}", age);
         }
     }
 }
