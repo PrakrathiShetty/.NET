@@ -1,17 +1,18 @@
 ﻿using System;
-public class Reverse
+public class Fibonacci
 {
     public static void Main(string[] args)
     {
-        int n, reverse = 0, rem;
-        Console.Write("Enter a number: ");
-        n = int.Parse(Console.ReadLine());
-        while (n != 0)
+        int n1 = 0, n2 = 1, n3, i, number;
+        Console.Write("Enter the number of elements: ");
+        number = int.Parse(Console.ReadLine());
+        Console.Write(n1 + " " + n2 + " ");   
+        for (i = 2; i < number; ++i)   
         {
-            rem = n % 10;
-            reverse = reverse * 10 + rem;
-            n /= 10;
+            n3 = n1 + n2;
+            Console.Write(n3 + " ");
+            n1 = n2;
+            n2 = n3;
         }
-        Console.Write("Reversed Number: " + reverse);
     }
-} 
+}
