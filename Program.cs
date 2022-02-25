@@ -1,46 +1,36 @@
 ﻿using System;
+using System.Threading;
 
 namespace Exercises
 {
-    class ExceptionHandling
+    class ThreadPoolProg
     {
-        static void Main(string[] args)
+       public  void ThreadFun1(Object obj)
         {
-            Age a = new Age();
-            try
+            int loop = 0;
+            for(loop=0;loop<=4;loop++)
             {
-                a.displayAge();
-            }
-            catch (AgeIsNegativeException e)
-            {
-                Console.WriteLine("AgeIsNegativeException :{0}", e.Message);
-            }
-            finally
-            {
-                Console.WriteLine("Excecution of finally block is done");
+                Console.WriteLine("Thead1 isexecting");
             }
         }
-    }
-}
-public class AgeIsNegativeException : Exception
-{
-    public AgeIsNegativeException(string message):base(message)
-    {
+        public void ThreadFun2(Object obj)
+        {
+            int loop= 0;
+            for (loop = 0; loop <= 4; loop++)
+            {
+                Console.WriteLine("Thead2 is execting");
+            }
 
-    }
-}
-public class Age
-{
-    int age = -5;
-    public void displayAge()
-    {
-        if(age<0)
-        {
-            throw (new AgeIsNegativeException("Age cannot be negative"));
         }
-        else
+        public static void Main()
         {
-            Console.WriteLine("Age is:{0}", age);
+            ThreadPoolProg TP = new ThreadPoolProg();
+            for(int i=0;i<2;i++)
+            {
+                ThreadPool.QueueUserWorkItem(new WaitCallback(TP.ThreadFun1));
+                ThreadPool.QueueUserWorkItem(new WaitCallback(TP.ThreadFun2));
+            }
+            Console.ReadKey();
         }
     }
 }
