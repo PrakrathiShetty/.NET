@@ -1,21 +1,17 @@
 ﻿using System;
-public class Armstrong
+public class SumOfDigit
 {
     public static void Main(string[] args)
     {
-        int n, r, sum = 0, temp;
-        Console.Write("Enter the Number= ");
+        int n, sum = 0, m;
+        Console.Write("Enter a number: ");
         n = int.Parse(Console.ReadLine());
-        temp = n;
         while (n > 0)
         {
-            r = n % 10;
-            sum = sum + (r * r * r);
+            m = n % 10;
+            sum = sum + m;
             n = n / 10;
         }
-        if (temp == sum)
-            Console.Write("Armstrong Number.");
-        else
-            Console.Write("Not Armstrong Number.");
+        Console.Write("Sum is= " + sum);
     }
 }
